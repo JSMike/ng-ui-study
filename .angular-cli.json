@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ng-ui",
       "styles": [
+        "../node_modules/material-design-icons-iconfont/dist/material-design-icons.css",
         "styles.scss"
       ],
       "scripts": [],
