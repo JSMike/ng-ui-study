@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink';
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+ng-ui-demo {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+md-sidenav {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 250px;
+}
+
+md-sidenav-container {
+  display: flex;
+  flex: 1;
+}
+
+.mat-sidenav-content[cdk-scrollable] {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+div.mat-tab-labels > div.mat-tab-label[md-tab-label-wrapper] {
+  min-width: 50%;
+}
+
+md-tab-body[role=tabpanel] > div.mat-tab-body-content {
+  height: initial;
+}

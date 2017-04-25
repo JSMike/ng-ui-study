@@ -1,0 +1,67 @@
+<md-toolbar color="primary">
+  <button md-mini-fab (click)="nav.toggle()">
+    <md-icon>menu</md-icon>
+  </button>
+  <span class="title">Angular Material: Nesting level {{ deep }}</span>
+</md-toolbar>
+<md-sidenav-container>
+  <md-sidenav #nav mode="side" opened="true">
+     <md-nav-list>
+      <md-list-item (click)="openDialog()">Dialog</md-list-item>
+      <md-list-item (click)="openSnackbar()">Snackbar</md-list-item>
+      <md-list-item><span mdTooltip="Tooltip Example" mdTooltipPosition="after">Tooltip</span></md-list-item>
+    </md-nav-list>
+    <md-tab-group>
+      <md-tab label="One">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+        <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+      </md-tab>
+      <md-tab label="Two">
+        <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+        <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
+      </md-tab>
+    </md-tab-group>
+    <md-chip-list class="mat-chip-list-stacked">
+      <md-chip selected="true" color="primary">
+        Chip 1
+      </md-chip>
+          <md-chip selected="true" color="accent">
+        Chip 2
+      </md-chip>
+      <md-chip selected="true" color="warn">
+        Chip 3
+      </md-chip>
+    </md-chip-list>
+    <md-card>
+      <md-card-content>
+        <md-toolbar color="primary">Progress Card</md-toolbar>
+        <md-progress-spinner
+            color="primary"
+            mode="indeterminate">
+        </md-progress-spinner>
+        <md-progress-bar
+            color="accent"
+            mode="indeterminate">
+        </md-progress-bar>
+      </md-card-content>
+    </md-card>
+    <form novalidate>
+      <md-checkbox name="checkbox">Checkbox</md-checkbox>
+      <md-radio-group name="radio" value="1">
+        <md-radio-button value="1">Radio Button 1</md-radio-button>
+        <md-radio-button value="2">Radio Button 2</md-radio-button>
+      </md-radio-group>
+      <md-slider value="33"></md-slider>
+      <md-slide-toggle>Slide toggle</md-slide-toggle>
+      <md-input-container>
+        <input mdInput placeholder="Input Field">
+      </md-input-container>
+      <md-select placeholder="Select One">
+        <md-option value="1">One</md-option>
+        <md-option value="2">Two</md-option>
+      </md-select>
+    </form>
+  </md-sidenav>
+  <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1" ></ng-ui-demo>
+  <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1" ></ng-ui-demo>
+</md-sidenav-container>
