@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@progress/kendo-theme-bootstrap/dist/all.css';
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+ng-ui-root {
+  display: flex;
+}
+
+ng-ui-demo {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  .content {
+    display: flex;
+    flex: 1;
+    .sidenav {
+      width: 250px;
+      display: flex;
+      flex-flow: column nowrap;
+      overflow-y: scroll;
+    }
+
+    .nested {
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 1;
+    }
+  }
+
+}
+
+form {
+  padding: 10px;
+}
+
+.k-tabstrip, .card {
+  display: -webkit-box;
+}

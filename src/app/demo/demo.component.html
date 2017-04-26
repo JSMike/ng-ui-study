@@ -1,0 +1,92 @@
+<nav class="navbar navbar-inverse" style="background-color: #ff6358;">
+  <h1 class="navbar-brand mb-0">Kendo UI for Angular: Nesting level {{deep}}</h1>
+</nav>
+<div class="content">
+  <div class="sidenav">
+    <kendo-panelbar>
+      <kendo-panelbar-item title="Dialog" (click)="dialog = !dialog"></kendo-panelbar-item>
+      <kendo-panelbar-item title="Toast"></kendo-panelbar-item>
+      <kendo-panelbar-item #popup title="Popup" (click)="pop = !pop"></kendo-panelbar-item>
+      <kendo-panelbar-item #tooltip title="Tooltip" (mouseenter)="tool = true" (mouseleave)="tool = false"></kendo-panelbar-item>
+    </kendo-panelbar>
+    <kendo-tabstrip>
+      <kendo-tabstrip-tab title="Tab 1" [selected]="true">
+        <ng-template kendoTabContent>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+          <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab title="Tab 2" [selected]="false">
+        <ng-template kendoTabContent>
+          <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+          <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
+        </ng-template>
+      </kendo-tabstrip-tab>
+    </kendo-tabstrip>
+    <div class="card">
+      <div class="card-header">Progress Card</div>
+      <div class="card-block">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+    <form>
+      <div>
+        <label class="k-form-field">
+          <input type="checkbox" id="auth-2fa" class="k-checkbox" checked="checked">
+          <label class="k-checkbox-label" for="auth-2fa">Enable two-factor authentication</label>
+        </label>
+      </div>
+      <div class="k-form-field">
+        <span>Gender</span>
+        <input type="radio" name="gender" id="female" class="k-radio">
+        <label class="k-radio-label" for="female">Female</label>
+        <input type="radio" name="gender" id="male" class="k-radio" checked="checked">
+        <label class="k-radio-label" for="male">Male</label>
+      </div>
+      <div>
+        <label for="slider">Slider (value = {{sliderValue}})</label>
+        <kendo-slider
+          name="slider"
+          [min]="min"
+          [max]="max"
+          [smallStep]="smallStep"
+          [(ngModel)] = "sliderValue"
+        ></kendo-slider>
+      </div>
+      <div>
+        <label for="switch">Switch</label>
+        <kendo-switch name="switch" [(ngModel)]="switchValue"></kendo-switch>
+      </div>
+      <div>
+        <label class="k-form-field">
+            <span>First Name</span>
+            <input class="k-textbox" placeholder="Your Name" />
+        </label>
+      </div>
+      <div>
+        <p>ComboBox</p>
+        <kendo-combobox [data]="listItems">
+        </kendo-combobox>
+      </div>
+      <button class="k-button">Submit Button</button>
+    </form>
+  </div>
+  <div class="nested">
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+  </div>
+</div>
+<kendo-popup [anchorAlign]="anchorAlign" [popupAlign]="popAlign" [anchor]="popup.header.nativeElement" (anchorViewportLeave)="pop = false" *ngIf="pop">
+  Popup Example
+</kendo-popup>
+<kendo-popup [anchorAlign]="anchorAlign" [popupAlign]="popAlign" [anchor]="tooltip.header.nativeElement" *ngIf="tool">
+  Tooltip Example
+</kendo-popup>
+<kendo-dialog title="Please confirm" *ngIf="dialog" (close)="dialog = false">
+  <p style="margin: 30px; text-align: center;">Are you sure you want to continue?</p>
+  <kendo-dialog-actions>
+    <button class="k-button" (click)="dialog = false" primary="true">Yes</button>
+  </kendo-dialog-actions>
+</kendo-dialog>
