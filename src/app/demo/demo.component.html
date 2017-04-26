@@ -1,0 +1,65 @@
+<igx-navbar [title]="title" actionButtonIcon="menu" (onAction)="nav.toggle()"></igx-navbar>
+<div class="demo-content">
+  <ig-nav-drawer #nav position="left" isOpen="true">
+    <div class="ig-drawer-content">
+      <igx-list #declarativeList>
+        <igx-list-item (click)="alert.open()">Dialog</igx-list-item>
+        <igx-list-item (click)="snackbar.show()">Snackbar</igx-list-item>
+        <igx-list-item>Tooltip</igx-list-item>
+      </igx-list>
+      <igx-tab-bar>
+        <igx-tab-panel label="Tab 1">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+          <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+        </igx-tab-panel>
+        <igx-tab-panel label="Tab 2">
+          <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+          <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
+      </igx-tab-panel>
+      </igx-tab-bar>
+      <igx-card>
+        <igx-card-header>
+          <h3>Progress Card</h3>
+        </igx-card-header>
+        <igx-card-content>
+          <igx-linear-bar type="success" [striped]="false" value="100" [max]="200">
+          </igx-linear-bar>
+
+          <igx-circular-bar value="75">
+          </igx-circular-bar>
+        </igx-card-content>
+      </igx-card>
+      <form>
+        <igx-checkbox>
+          Example Checkbox
+        </igx-checkbox>
+        <igx-radio value="1" name="group">
+            Radio 1
+        </igx-radio>
+        <igx-radio value="2" name="group">
+            Radio 2
+        </igx-radio>
+        <igx-range>Range</igx-range>
+        <igx-switch>Switch</igx-switch>
+        <div class="igx-form-group">
+          <input type="text" igxInput />
+          <label igxLabel>Input Field</label>
+        </div>
+      </form>
+    </div>
+  </ig-nav-drawer>
+  <igx-snackbar #snackbar
+    message="This is a snackbar with a button and action!"
+    actionText="Dismiss"
+    (onAction)="snackbar.hide()">
+  </igx-snackbar>
+  <igx-dialog #alert
+      title="Alert"
+      message="Your email has been sent successfully!"
+      leftButtonLabel="OK" (onLeftButtonSelect)="alert.close()">
+  </igx-dialog>
+  <div class="nested">
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+  </div>
+</div>

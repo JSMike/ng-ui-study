@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~igniteui-js-blocks/zero-blocks.material.css';
+@import '~igniteui-js-blocks/zero-blocks.css';
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+ng-ui-demo {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+ig-nav-drawer {
+  display: flex;
+}
+
+ig-nav-drawer > aside.ig-nav-drawer.pinned {
+  display: flex;
+  height: initial;
+  & > div {
+    flex: 1;
+    display: flex;
+    & > div.ig-drawer-content {
+      display: flex;
+      flex: 1;
+      flex-flow: column nowrap;
+
+      igx-list-item > div.igx-list__item:hover {
+        background: #EFEFEF;
+      }
+
+      igx-tab-bar, div.igx-tab-bar__menu.igx-tab-bar__menu--bottom {
+        background: #DDF;
+      }
+
+      form {
+        padding: 10px;
+      }
+    }
+  }
+
+}
+igx-card-header > h3 {
+  background: #0375be;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  height: 56px;
+  line-height: 3.25em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.igx-tab-bar__menu--bottom {
+  position: relative;
+}
+
+.igx-control__radio~.igx-control__label:after, .igx-control__radio~.igx-control__label:before {
+  top: 0;
+}
+
+svg.progress-circular {
+  width: 50%;
+  height: 75%;
+}
+
+
