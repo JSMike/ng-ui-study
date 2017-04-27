@@ -1,3 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+ng-ui-root {
+  display: flex;
+  flex: 1;
+}
+
+ng-ui-demo {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  .sidenav-container {
+    display: flex;
+    flex: 1;
+    .sidenav {
+      width: 250px;
+      display: flex;
+      flex-flow: column nowrap;
+      overflow-y: scroll;
+      nav {
+        display: block;
+      }
+      .nav-item:hover {
+        background: #EFEFEF;
+        cursor: pointer;
+      }
+      ngb-tabset {
+        padding: 10px;
+      }
+      .card {
+        display: block;
+        padding: 10px;
+      }
+      .card-block {
+        display: flex;
+        flex-flow: column nowrap;
+        ngb-progressbar {
+          padding: 10px;
+        }
+      }
+      form {
+        padding: 10px;
+      }
+    }
+    .demo-content {
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 1;
+    }
+  }
+}
+
+ngb-alert {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}
