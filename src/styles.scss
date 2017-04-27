@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~material-design-icons-iconfont/dist/material-design-icons.css';
+@import '~@angular-mdl/core/scss/material-design-lite';
+
+html, body, ng-ui-root {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+ng-ui-root, .mdl-layout__content, .mdl-layout {
+  display: flex;
+  flex: 1;
+}
+
+ng-ui-demo, mdl-layout, .mdl-layout__container, .nested {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+div.mdl-layout.mdl-layout--fixed-drawer, .mdl-layout__container {
+  position: relative;
+  height: initial;
+  width: initial;
+}
+
+mdl-tabs.mdl-tabs {
+  padding: 10px;
+  width: initial;
+}
+
+
+mdl-card, .mdl-card {
+  padding: 10px;
+  width: initial;
+  mdl-card-supporting-text {
+    flex: 4
+  }
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.mdl-navigation__link {
+  cursor: pointer;
+}

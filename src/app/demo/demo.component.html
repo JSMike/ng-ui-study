@@ -1,0 +1,68 @@
+<mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed>
+  <mdl-layout-header>
+    <mdl-layout-header-row>
+      <mdl-layout-title>Angular - Material Design Lite: Nesting Level {{deep}}</mdl-layout-title>
+    </mdl-layout-header-row>
+  </mdl-layout-header>
+  <mdl-layout-content class="contain">
+    <mdl-layout mdl-layout-fixed-drawer>
+      <mdl-layout-drawer>
+        <mdl-list class="mdl-navigation">
+          <mdl-list-item class="mdl-navigation__link" (click)="alert.show()">
+            <mdl-list-item-primary-content>Dialog</mdl-list-item-primary-content>
+          </mdl-list-item>
+          <mdl-list-item class="mdl-navigation__link" (click)="showSnackbar()">
+            <mdl-list-item-primary-content>Snackbar</mdl-list-item-primary-content>
+          </mdl-list-item>
+          <mdl-list-item class="mdl-navigation__link" >
+            <mdl-list-item-primary-content mdl-tooltip="tooltip" mdl-tooltip-position="top">
+              Tooltip
+            </mdl-list-item-primary-content>
+          </mdl-list-item>
+        </mdl-list>
+        <mdl-tabs mdl-ripple mdl-tab-active-index="0">
+          <mdl-tab-panel mdl-tab-panel-title="Tab 1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+            <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+          </mdl-tab-panel>
+          <mdl-tab-panel mdl-tab-panel-title="Tab 2">
+            <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+            <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc
+              maximus eu.</p>
+          </mdl-tab-panel>
+        </mdl-tabs>
+        <mdl-card class="demo-card-square" mdl-shadow="2">
+          <mdl-card-title mdl-card-expand>
+            <h3 mdl-card-title-text>Progress Card</h3>
+          </mdl-card-title>
+          <mdl-card-supporting-text>
+            <mdl-spinner [active]="true"></mdl-spinner>
+            <mdl-progress [indeterminate]="true"></mdl-progress>
+          </mdl-card-supporting-text>
+        </mdl-card>
+        <form>
+          <mdl-checkbox [mdl-ripple]="true"> Checkbox </mdl-checkbox>
+          <mdl-radio name="group1" value="1" mdl-ripple>Radio Button 1</mdl-radio>
+          <mdl-radio name="group1" value="2" mdl-ripple>Radio Button 2</mdl-radio>
+          <mdl-slider min="1" max="50" value="30" ></mdl-slider>
+          <mdl-switch mdl-ripple>Option 1</mdl-switch>
+          <mdl-textfield type="text" label="Text..." floating-label></mdl-textfield>
+          <mdl-select placeholder="Select One">
+            <mdl-option [value]="1">One</mdl-option>
+            <mdl-option [value]="2">Two</mdl-option>
+            <mdl-option [value]="3">Three</mdl-option>
+          </mdl-select>
+        </form>
+      </mdl-layout-drawer>
+      <mdl-layout-content class="nested">
+        <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+        <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+      </mdl-layout-content>
+    </mdl-layout>
+  </mdl-layout-content>
+</mdl-layout>
+<mdl-alert
+  #alert="mdlAlert"
+  message="This is a <em class='mdl-color-text--primary'>simple</em> Alert"
+  okText="Got it!">
+</mdl-alert>
