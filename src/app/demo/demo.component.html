@@ -1,0 +1,126 @@
+<div class="slds-context-bar">
+  <div class="slds-context-bar__icon-action">
+    <button nglButton  class="slds-icon-waffle_container slds-context-bar__button">
+      <div class="slds-icon-waffle">
+        <div class="slds-r1"></div>
+        <div class="slds-r2"></div>
+        <div class="slds-r3"></div>
+        <div class="slds-r4"></div>
+        <div class="slds-r5"></div>
+        <div class="slds-r6"></div>
+        <div class="slds-r7"></div>
+        <div class="slds-r8"></div>
+        <div class="slds-r9"></div>
+      </div>
+      <span class="slds-assistive-text">Open App Launcher</span>
+    </button>
+  </div>
+  <span class="slds-context-bar__label-action slds-context-bar__app-name">
+    ng-lightning: Nesting Level {{ deep }}
+  </span>
+</div>
+<div class="site-body">
+  <div class="site-navigation">
+    <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
+      <h2 class="slds-text-title--caps slds-p-around--medium" id="entity-header">Actions</h2>
+      <ul>
+        <li (click)="modal.open = true">
+          <span class="slds-navigation-list--vertical__action slds-text-link--reset">Modal</span>
+        </li>
+        <li (click)="toast= true">
+          <span class="slds-navigation-list--vertical__action slds-text-link--reset">Toast</span>
+        </li>
+        <li class="slds-navigation-list--vertical__action slds-text-link--reset">
+          <span
+            nglPopover="Popover Example"
+            [nglOpen]="popover"
+            nglPopoverPlacement="right"
+            (click)="popover = !popover">Popover</span>
+        </li>
+        <li class="slds-navigation-list--vertical__action slds-text-link--reset">
+          <span
+            nglPopover="Tooltip Example"
+            nglPopoverBehavior
+            nglTooltip
+            #x="nglPopover"
+            nglPopoverPlacement="right">Tooltip</span>
+        </li>
+      </ul>
+    </div>
+    <ngl-tabs [(selected)]="tab">
+      <template ngl-tab heading="Tab 1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+        <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+      </template>
+      <ngl-tab>
+        <template ngl-tab-heading>Tab 2</template>
+        <template ngl-tab-content>
+          <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+          <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
+        </template>
+      </ngl-tab>
+    </ngl-tabs>
+    <article class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <header class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__body">
+            <h2>
+              <span class="slds-text-heading--small">Progress Card</span>
+            </h2>
+          </div>
+        </header>
+      </div>
+      <div class="slds-card__body">
+        <div style="position:relative; height:6.25rem; z-index:0;">
+          <ngl-spinner></ngl-spinner>
+        </div>
+        <div style="position:relative; height:6.25rem; z-index:0;">
+          <ngl-spinner type="brand" size="small"></ngl-spinner>
+        </div>
+      </div>
+    </article>
+    <form>
+      <fieldset ngl-form-group label="Checkbox Group Label" [required]="required" [error]="hasError ? error : null" class="slds-m-top--small">
+        <ngl-form-group-element label="Checkbox Label One"><input nglFormControl type="checkbox" /></ngl-form-group-element>
+        <ngl-form-group-element label="Checkbox Label Two"><input nglFormControl type="checkbox" /></ngl-form-group-element>
+      </fieldset>
+      <fieldset ngl-form-group label="Radio Group Label" [required]="required" class="slds-m-top--small">
+        <ngl-form-group-element label="Radio Label One"><input nglFormControl type="radio" /></ngl-form-group-element>
+        <ngl-form-group-element label="Radio Label Two"><input nglFormControl type="radio" /></ngl-form-group-element>
+      </fieldset>
+      <ngl-form-checkbox-toggle label="Toggle Label" class="slds-m-top--small">
+        <input nglFormControl type="checkbox" />
+      </ngl-form-checkbox-toggle>
+      <ngl-form-element label="Input Label" class="slds-m-top--small">
+        <input nglFormControl type="text" placeholder="My input">
+      </ngl-form-element>
+      <ngl-form-element label="Select Label" class="slds-m-top--small">
+        <select nglFormControl class="slds-select">
+          <option>Option One</option>
+          <option>Option Two</option>
+          <option>Option Three</option>
+        </select>
+      </ngl-form-element>
+    </form>
+  </div>
+  <div class="site-main">
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+  </div>
+</div>
+<ngl-modal #modal header="Modal Header" [open]="false">
+  <div body>
+    <p>Sit nulla est ex deserunt exercitation anim occaecat. Tempor cupidatat consequat elit dolor adipisicing.</p>
+    <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia.</p>
+    <p>Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.</p>
+  </div>
+  <template ngl-modal-footer>
+    <button class="slds-button slds-button--neutral" (click)="modal.open = false">Cancel</button>
+    <button class="slds-button slds-button--brand" (click)="modal.open = false">Save</button>
+  </template>
+</ngl-modal>
+<div class="slds-notify_container">
+  <ngl-notification *ngIf="toast" type="alert" severity="error" (nglNotificationClose)="toast = false" timeout="5000" class="slds-theme--alert-texture">
+    <h2>This is an alert! (I will close automatically after 5 seconds if you don't click on the close button)</h2>
+  </ngl-notification>
+</div>

@@ -8,6 +8,11 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
+        {
+          "glob": "**/*",
+          "input": "../node_modules/@salesforce-ux/design-system/assets/icons/",
+          "output": "./assets/icons/"
+        },
         "assets",
         "favicon.ico"
       ],

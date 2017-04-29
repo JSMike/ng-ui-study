@@ -1,2 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@salesforce-ux/design-system/scss/index';
+@import '~@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css';
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+ng-ui-root, div.site-body {
+  display: flex;
+  flex: 1;
+}
+
+ng-ui-demo, div.site-main {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+div.site-navigation {
+  width: 250px;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow-y: scroll;
+}
+
+.slds-context-bar__item--divider-right {
+  border-right: 0;
+}
+
+.slds-popover {
+  width: initial;
+}
+
+.slds-grid {
+   display: initial;
+ }
+
+ .slds-card, ngl-tabs {
+   margin: 5px;
+ }
+
+.slds-text-heading--small {
+  padding: 0 10px;
+}
+
+form {
+  margin: 0 10px;
+}
