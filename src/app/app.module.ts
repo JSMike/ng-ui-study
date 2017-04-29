@@ -14,11 +14,14 @@ import {
   SuiTabsModule
 } from 'ng2-semantic-ui';
 
+import { DemoComponent } from './demo/demo.component';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

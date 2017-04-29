@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+ng-ui-root, sui-sidebar-container {
+  display: flex;
+  flex: 1
+}
+
+ng-ui-demo {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+sui-sidebar-sibling {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+  position: relative;
+  min-height: initial;
+}
+
+sui-sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+
+.ui.vertical.menu .item:hover {
+  cursor: pointer;
+  background: #EFEFEF;
+}
+
+.ui.card, .ui.attached.tabular.menu, .ui.tabular.menu + .attached:not(.top).segment {
+  margin: 0 10px;
+  width: initial;
+}
+
+sui-tabset, form {
+  margin: 10px;
+}
+
+sui-message {
+  position: absolute;
+  bottom: 0;
+}
