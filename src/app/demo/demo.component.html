@@ -1,0 +1,125 @@
+<mz-navbar>
+  <mz-navbar-item-container align="left">
+    <mz-navbar-item><a>ng2-materialize: Nesting Level {{ deep }}</a></mz-navbar-item>
+  </mz-navbar-item-container>
+</mz-navbar>
+<div class="demo-wrapper">
+  <mz-sidenav demo-sidenav collapseButtonId="btn-sidenav-demo" id="sidenav">
+    <mz-sidenav-header>
+      Sidenav header
+    </mz-sidenav-header>
+    <mz-sidenav-link>
+      <a href="#" (click)="demoModal.open()" class="waves-effect">Modal</a>
+    </mz-sidenav-link>
+    <mz-sidenav-link>
+      <a href="#" (click)="showToast()" class="waves-effect">Toast</a>
+    </mz-sidenav-link>
+    <mz-sidenav-link>
+      <a href="#" class="waves-effect">Popover</a>
+    </mz-sidenav-link>
+    <mz-sidenav-link>
+      <a href="#" class="waves-effect">
+        <span
+          mz-tooltip
+          tooltip="Tooltip"
+          position="right"
+          [delay]="0">Tooltip</span>
+      </a>
+    </mz-sidenav-link>
+    <div class="col s12">
+      <ul class="tabs row">
+        <li class="tab col s6">
+          <a class="active" href="#test1">tab 1</a>
+        </li>
+        <li class="tab col s6">
+          <a href="#test2">tab 2</a>
+        </li>
+      </ul>
+      <div id="test1" class="col s12">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+        <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+      </div>
+      <div id="test2" class="col s12">
+        <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+        <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
+      </div>
+    </div>
+    <mz-card>
+      <mz-card-title>
+        Progress Card
+      </mz-card-title>
+      <mz-card-content>
+        <mz-spinner
+          color="blue"
+          size="big">
+        </mz-spinner>
+        <mz-progress
+          backgroundClass="blue lighten-4"
+          progressClass="blue">
+        </mz-progress>
+      </mz-card-content>
+    </mz-card>
+    <form novalidate>
+      <mz-checkbox-container>
+        <input mz-checkbox
+          label="Checkbox"
+          id="checkbox-id"
+          type="checkbox">
+      </mz-checkbox-container>
+      <mz-radio-button-container>
+        <input mz-radio-button
+          name="radio-group"
+          id="radio-option-1"
+          value="1"
+          label="Radio 1"
+          [withGap]="true"
+          [disabled]="radioDisabled"
+          ngModel
+          type="radio">
+      </mz-radio-button-container>
+      <mz-radio-button-container>
+        <input mz-radio-button
+          name="radio-group"
+          id="radio-option-2"
+          value="2"
+          label="Radio 2"
+          [withGap]="true"
+          ngModel
+          type="radio">
+      </mz-radio-button-container>
+      <mz-input-container>
+        <input mz-input
+          label="Text Field"
+          id="basic-input"
+          type="text">
+      </mz-input-container>
+      <mz-select-container>
+        <select mz-select
+          id="basic-select"
+          label="Select Example"
+          placeholder="Select One">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </mz-select-container>
+    </form>
+  </mz-sidenav>
+  <div class="demo-content">
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+  </div>
+</div>
+<mz-modal #demoModal>
+  <mz-modal-header>
+    Modal Title
+  </mz-modal-header>
+  <mz-modal-content>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true" mz-modal-close>Disagree</button>
+    <button mz-button [flat]="true" mz-modal-close>Agree</button>
+  </mz-modal-footer>
+</mz-modal>
+<button mz-button id="btn-sidenav-demo" hidden></button>

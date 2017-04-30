@@ -19,9 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "ng-ui",
       "styles": [
-        "styles.scss",
-        "../node_modules/materialize-css/dist/css/materialize.css",
-        "../node_modules/mdi/css/materialdesignicons.css"
+        "styles.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
