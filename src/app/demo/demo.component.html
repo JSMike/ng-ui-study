@@ -1,0 +1,46 @@
+<p-toolbar>
+
+  <div class="ui-toolbar-group-left">
+    <i class="fa fa-bars"></i>
+    <span>PrimeNg: Nesting Level {{ deep }}</span>
+  </div>
+</p-toolbar>
+<div class="layout-wrapper">
+  <div class="sidebar">
+    <p-breadcrumb [model]="breadcrumbs"></p-breadcrumb>
+    <p-menu [model]="items"></p-menu>
+    <button pButton type="button" class="ui-button-secondary" label="Popover" pTooltip="Popover Example" tooltipPosition="right" tooltipEvent="focus"></button>
+    <button pButton type="button" class="ui-button-secondary" label="Tooltip" pTooltip="Tooltip Example" tooltipPosition="right"></button>
+    <p-tabView>
+      <p-tabPanel header="Tab 1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+        <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
+      </p-tabPanel>
+      <p-tabPanel header="Tab 2">
+        <p>Phasellus sodales diam ac justo malesuada facilisis. Proin finibus eu dui quis vehicula.</p>
+        <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
+      </p-tabPanel>
+    </p-tabView>
+    <p-panel header="Progress Panel">
+      <p-progressBar [value]="55"></p-progressBar>
+    </p-panel>
+    <form novalidate>
+      <p-checkbox name="check" label="Checkbox" value="1" ngModel></p-checkbox>
+      <p-radioButton name="radio" label="Option 1" value="1"></p-radioButton>
+      <p-radioButton name="radio" label="Option 2" value="2"></p-radioButton>
+      <p-inputSwitch name="switch" onLabel="On" offLabel="Off"></p-inputSwitch>
+      <p-slider></p-slider>
+      <input type="text" pInputText />
+      <p-dropdown [options]="options"></p-dropdown>
+      <button pButton type="button" (click)="count()" icon="fa-check" label="Click"></button>
+    </form>
+  </div>
+  <div class="nested">
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+    <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
+  </div>
+</div>
+<p-dialog header="Title" [(visible)]="viewDialog">
+    Content
+</p-dialog>
+<p-growl [value]="alerts" sticky="sticky"></p-growl>

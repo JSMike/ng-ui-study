@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~primeng/resources/themes/redmond/theme.css';
+@import '~primeng/resources/primeng.css';
+@import '~font-awesome/css/font-awesome.css';
+
+html, body, ng-ui-root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+ng-ui-root, .layout-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+ng-ui-demo, .nested {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
+
+.sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 250px;
+  overflow-y: scroll;
+}
+
+form {
+  padding: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.ui-button-secondary {
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+}
