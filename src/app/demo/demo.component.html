@@ -5,9 +5,7 @@
   <div class="sidenav">
     <kendo-panelbar>
       <kendo-panelbar-item title="Dialog" (click)="dialog = !dialog"></kendo-panelbar-item>
-      <kendo-panelbar-item title="Toast"></kendo-panelbar-item>
       <kendo-panelbar-item #popup title="Popup" (click)="pop = !pop"></kendo-panelbar-item>
-      <kendo-panelbar-item #tooltip title="Tooltip" (mouseenter)="tool = true" (mouseleave)="tool = false"></kendo-panelbar-item>
     </kendo-panelbar>
     <kendo-tabstrip>
       <kendo-tabstrip-tab title="Tab 1" [selected]="true">
@@ -56,10 +54,6 @@
         ></kendo-slider>
       </div>
       <div>
-        <label for="switch">Switch</label>
-        <kendo-switch name="switch" [(ngModel)]="switchValue"></kendo-switch>
-      </div>
-      <div>
         <label class="k-form-field">
             <span>First Name</span>
             <input class="k-textbox" placeholder="Your Name" />
@@ -70,7 +64,7 @@
         <kendo-combobox [data]="listItems">
         </kendo-combobox>
       </div>
-      <button class="k-button">Submit Button</button>
+      <button class="k-button">Submit Button <i class="fa fa-upload" aria-hidden="true"></i></button>
     </form>
   </div>
   <div class="nested">
@@ -80,9 +74,6 @@
 </div>
 <kendo-popup [anchorAlign]="anchorAlign" [popupAlign]="popAlign" [anchor]="popup.header.nativeElement" (anchorViewportLeave)="pop = false" *ngIf="pop">
   Popup Example
-</kendo-popup>
-<kendo-popup [anchorAlign]="anchorAlign" [popupAlign]="popAlign" [anchor]="tooltip.header.nativeElement" *ngIf="tool">
-  Tooltip Example
 </kendo-popup>
 <kendo-dialog title="Please confirm" *ngIf="dialog" (close)="dialog = false">
   <p style="margin: 30px; text-align: center;">Are you sure you want to continue?</p>

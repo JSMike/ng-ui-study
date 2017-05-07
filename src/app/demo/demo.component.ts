@@ -1,11 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ng-ui-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  templateUrl: './demo.component.html'
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent {
   @Input() deep: number;
   public maskedValue: string;
   public sliderValue: number = 5;
@@ -20,9 +19,5 @@ export class DemoComponent implements OnInit {
   public dialog: boolean = false;
   public popAlign: {} = { vertical: 'top', horizontal: 'right' };
   public anchorAlign: {} = { vertical: 'top', horizontal: 'right' };
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }
