@@ -7,20 +7,13 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'ng-ui-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  templateUrl: './demo.component.html'
 })
 export class DemoComponent {
   @Input() deep: number;
   showAlert = false;
   alertTimeout: any;
   closeResult: string;
-  values: string[] = [
-    'One',
-    'Two',
-    'Three'
-  ];
-  model: string;
 
   constructor(private modalService: NgbModal) {}
 
@@ -43,12 +36,4 @@ export class DemoComponent {
     this.alertTimeout = null;
     this.showAlert = false;
   }
-
-  search = (text$: Observable<string>) =>
-    text$
-      .debounceTime(200)
-      .distinctUntilChanged()
-      .map(term => term.length < 1 ? []
-        : this.values.filter(v => new RegExp(term, 'gi').test(v)).splice(0, 10));
-
 }

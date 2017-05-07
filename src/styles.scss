@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
+@import '~font-awesome/css/font-awesome.css';
 @import '~bootstrap/scss/bootstrap';
 
 html, body, ng-ui-root {
@@ -38,7 +38,7 @@ ng-ui-demo {
       }
       .card {
         display: block;
-        padding: 10px;
+        margin: 10px;
       }
       .card-block {
         display: flex;
