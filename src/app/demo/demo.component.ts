@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NavigationDrawer } from 'igniteui-js-blocks/main';
 
 @Component({
   selector: 'ng-ui-demo',

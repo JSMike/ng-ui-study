@@ -5,24 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import {
-  IgxCheckboxModule,
-  IgxIconModule,
-  IgxListModule,
-  IgxDialogModule,
-  IgxNavbarModule,
-  NavigationDrawerModule,
-  IgxProgressBarModule,
-  IgxRadioModule,
-  IgxSwitchModule,
-  IgxTabBarModule,
-  IgxCardModule,
-  IgxSnackbarModule,
-  IgxRangeModule,
-  IgxButtonModule,
-  IgxInput,
-  IgxRippleModule,
-  IgxLabelModule
-} from 'igniteui-js-blocks/main';
+  IgxComponentsModule,
+  IgxDirectivesModule
+} from 'igniteui-js-blocks/modules';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -38,23 +23,8 @@ import { DemoComponent } from './demo/demo.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    IgxCheckboxModule,
-    IgxIconModule,
-    IgxListModule,
-    IgxDialogModule,
-    IgxNavbarModule,
-    NavigationDrawerModule,
-    IgxProgressBarModule,
-    IgxRadioModule,
-    IgxSwitchModule,
-    IgxTabBarModule,
-    IgxCardModule,
-    IgxSnackbarModule,
-    IgxRangeModule,
-    IgxButtonModule,
-    IgxInput,
-    IgxRippleModule,
-    IgxLabelModule
+    IgxComponentsModule,
+    IgxDirectivesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
