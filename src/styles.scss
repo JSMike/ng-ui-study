@@ -72,4 +72,14 @@ svg.progress-circular {
   height: 75%;
 }
 
+div.demo-content {
+  display: flex;
+  flex: 1;
+}
+
+div.nested {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+}
 

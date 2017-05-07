@@ -3,8 +3,7 @@ import { NavigationDrawer } from 'igniteui-js-blocks/main';
 
 @Component({
   selector: 'ng-ui-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  templateUrl: './demo.component.html'
 })
 export class DemoComponent implements OnInit {
   @Input() deep: number;
