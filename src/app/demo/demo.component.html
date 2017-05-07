@@ -21,6 +21,11 @@
 </div>
 <div class="site-body">
   <div class="site-navigation">
+    <ngl-breadcrumbs assistiveText="Breadcrumbs" class="slds-m-top--large">
+      <span *ngFor="let bc of breadcrumbs">
+        <a *nglBreadcrumb href="#">Level {{ bc }}</a>
+      </span>
+    </ngl-breadcrumbs>
     <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
       <h2 class="slds-text-title--caps slds-p-around--medium" id="entity-header">Actions</h2>
       <ul>
@@ -60,6 +65,7 @@
         </template>
       </ngl-tab>
     </ngl-tabs>
+    <ngl-badge>Badge</ngl-badge>
     <article class="slds-card">
       <div class="slds-card__header slds-grid">
         <header class="slds-media slds-media--center slds-has-flexi-truncate">
@@ -74,23 +80,16 @@
         <div style="position:relative; height:6.25rem; z-index:0;">
           <ngl-spinner></ngl-spinner>
         </div>
-        <div style="position:relative; height:6.25rem; z-index:0;">
-          <ngl-spinner type="brand" size="small"></ngl-spinner>
-        </div>
       </div>
     </article>
     <form>
-      <fieldset ngl-form-group label="Checkbox Group Label" [required]="required" [error]="hasError ? error : null" class="slds-m-top--small">
-        <ngl-form-group-element label="Checkbox Label One"><input nglFormControl type="checkbox" /></ngl-form-group-element>
-        <ngl-form-group-element label="Checkbox Label Two"><input nglFormControl type="checkbox" /></ngl-form-group-element>
+      <fieldset ngl-form-group [required]="required" [error]="hasError ? error : null" class="slds-m-top--small">
+        <ngl-form-group-element label="Checkbox Label"><input nglFormControl type="checkbox" /></ngl-form-group-element>
       </fieldset>
       <fieldset ngl-form-group label="Radio Group Label" [required]="required" class="slds-m-top--small">
         <ngl-form-group-element label="Radio Label One"><input nglFormControl type="radio" /></ngl-form-group-element>
         <ngl-form-group-element label="Radio Label Two"><input nglFormControl type="radio" /></ngl-form-group-element>
       </fieldset>
-      <ngl-form-checkbox-toggle label="Toggle Label" class="slds-m-top--small">
-        <input nglFormControl type="checkbox" />
-      </ngl-form-checkbox-toggle>
       <ngl-form-element label="Input Label" class="slds-m-top--small">
         <input nglFormControl type="text" placeholder="My input">
       </ngl-form-element>
@@ -101,6 +100,7 @@
           <option>Option Three</option>
         </select>
       </ngl-form-element>
+      <button type="button" nglButton="neutral">Submit <ngl-icon icon="download" size="small"></ngl-icon></button>
     </form>
   </div>
   <div class="site-main">
@@ -112,7 +112,6 @@
   <div body>
     <p>Sit nulla est ex deserunt exercitation anim occaecat. Tempor cupidatat consequat elit dolor adipisicing.</p>
     <p>Dolor eiusmod sunt ex incididunt cillum quis nostrud velit duis sit officia.</p>
-    <p>Labore esse esse cupidatat amet velit id elit consequat minim ullamco mollit enim excepteur ea.</p>
   </div>
   <template ngl-modal-footer>
     <button class="slds-button slds-button--neutral" (click)="modal.open = false">Cancel</button>
