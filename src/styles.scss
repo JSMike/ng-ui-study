@@ -41,3 +41,23 @@ div.mat-tab-labels > div.mat-tab-label[md-tab-label-wrapper] {
 md-tab-body[role=tabpanel] > div.mat-tab-body-content {
   height: initial;
 }
+
+.title {
+  padding: 0 10px;
+}
+
+md-tab-group {
+  background-color: #EEF;
+  p {
+    padding: 0 10px;
+  }
+}
+
+form {
+  padding: 10px;
+}
+
+md-select {
+  display: block;
+  padding: 5px 0;
+}
