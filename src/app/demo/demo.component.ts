@@ -3,8 +3,7 @@ import { MdlSnackbarService } from '@angular-mdl/core';
 
 @Component({
   selector: 'ng-ui-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  templateUrl: './demo.component.html'
 })
 export class DemoComponent {
   @Input() deep: number;
@@ -22,5 +21,4 @@ export class DemoComponent {
       }
     });
   }
-
 }
