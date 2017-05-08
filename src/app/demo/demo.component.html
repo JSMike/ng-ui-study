@@ -7,7 +7,7 @@
       <span class="nav-item nav-link" (click)="staticModal.show()">Modal</span>
       <span class="nav-item nav-link" (click)="alert = true">Alert</span>
       <span class="nav-item nav-link">
-        <button class="btn btn-secondary" placement="right" tooltip="Popover example" triggers="focus">Popover</button>
+        <span placement="right" popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover</span>
       </span>
       <span class="nav-item nav-link">
         <span placement="right" tooltip="Tooltip example">Tooltip</span>
@@ -23,6 +23,7 @@
         <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
       </tab>
     </tabset>
+    <span class="badge badge-warning">Badge Example</span>
     <div class="card">
       <div class="card-header">Progress Card</div>
       <div class="card-block">
@@ -48,14 +49,6 @@
           Radio 2
         </label>
       </div>
-      <div class="btn-group">
-        <label class="btn btn-primary" ngModel name="buttons"
-          btnRadio="Left">Left</label>
-        <label class="btn btn-primary" ngModel name="buttons"
-          btnRadio="Middle">Middle</label>
-        <label class="btn btn-primary" ngModel name="buttons"
-          btnRadio="Right">Right</label>
-      </div>
       <div class="form-group">
         <label for="textField">Text Field</label>
         <input type="text" id="textField" class="form-control" placeholder="Text here...">
@@ -68,7 +61,7 @@
           <option>Option 3</option>
         </select>
       </div>
-      <button type="button" class="btn btn-secondary">Button <span class="close">&times;</span></button>
+      <button type="button" class="btn btn-outline-success">Button <span class="close"><i class="fa fa-upload icon-success"></i></span></button>
   </form>
   </div>
   <div class="demo-content">
@@ -81,14 +74,14 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left">Static modal</h4>
+        <h4 class="modal-title pull-left">Modal Title</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
       </div>
       <div class="modal-body">
-        This is static modal, backdrop click will not close it.
-        Click <b>&times;</b> to close modal.
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+        <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
+@import '~font-awesome/css/font-awesome.css';
 @import '~bootstrap/scss/bootstrap';
 
 html, body, ng-ui-root {
@@ -57,4 +57,8 @@ alert {
   position: absolute;
   bottom: 0;
   left: 15px;
+}
+
+.icon-success {
+    color: #5CB85C;
 }
