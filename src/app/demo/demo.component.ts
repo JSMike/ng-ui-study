@@ -3,8 +3,7 @@ import { MenuItem, Message, SelectItem } from 'primeng/primeng';
 
 @Component({
   selector: 'ng-ui-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+  templateUrl: './demo.component.html'
 })
 export class DemoComponent implements OnInit {
   @Input() deep: number;
@@ -17,8 +16,6 @@ export class DemoComponent implements OnInit {
   viewAlert = false;
   viewPopover = false;
   viewTooltip = false;
-
-  constructor() { }
 
   ngOnInit() {
     this.items = [
@@ -56,5 +53,4 @@ export class DemoComponent implements OnInit {
     this.breadcrumbs = Array.from(Array(this.deep + 1).keys())
       .map((d) => <MenuItem>{ label: `Nesting Level ${d}`});
   }
-
 }

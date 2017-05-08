@@ -1,5 +1,4 @@
 <p-toolbar>
-
   <div class="ui-toolbar-group-left">
     <i class="fa fa-bars"></i>
     <span>PrimeNg: Nesting Level {{ deep }}</span>
@@ -28,11 +27,10 @@
       <p-checkbox name="check" label="Checkbox" value="1" ngModel></p-checkbox>
       <p-radioButton name="radio" label="Option 1" value="1"></p-radioButton>
       <p-radioButton name="radio" label="Option 2" value="2"></p-radioButton>
-      <p-inputSwitch name="switch" onLabel="On" offLabel="Off"></p-inputSwitch>
       <p-slider></p-slider>
       <input type="text" pInputText />
       <p-dropdown [options]="options"></p-dropdown>
-      <button pButton type="button" (click)="count()" icon="fa-check" label="Click"></button>
+      <button pButton type="button" icon="fa-check" label="Click"></button>
     </form>
   </div>
   <div class="nested">
@@ -40,7 +38,8 @@
     <ng-ui-demo *ngIf="deep < 4" [deep]="deep + 1"></ng-ui-demo>
   </div>
 </div>
-<p-dialog header="Title" [(visible)]="viewDialog">
-    Content
+<p-dialog header="Dialog Title" [(visible)]="viewDialog">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at pulvinar magna, eu accumsan arcu.</p>
+  <p>Aenean sodales laoreet turpis, quis congue purus tincidunt facilisis.</p>
 </p-dialog>
 <p-growl [value]="alerts" sticky="sticky"></p-growl>
