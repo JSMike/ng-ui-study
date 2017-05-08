@@ -1,18 +1,16 @@
 <div class="ui top attached demo menu">
   <a class="item" (click)="sidebar.toggle()">
-    <i class="sidebar icon"></i> ng-semantic-ui: Nesting level {{ deep }}
+    <i class="sidebar icon"></i> ng2-semantic-ui: Nesting level {{ deep }}
   </a>
 </div>
 <sui-sidebar-container class="ui bottom attached segment">
   <sui-sidebar class="vertical" [isVisible]="true" #sidebar>
     <div class="ui breadcrumb">
-      <a class="section">One</a>
-      <div class="divider"> / </div>
-      <a class="section">Two</a>
-      <div class="divider"> / </div>
-      <div class="active section">Three</div>
+      <span *ngFor="let bc of breadcrumbs; let last = last">
+        <div *ngIf="bc > 0"class="divider"> / </div>
+        <a class="section" [ngClass]="{ active: last }">Level {{bc}}</a>
+      </span>
     </div>
-    <span class="item">Dialog</span>
     <span class="item" (click)="alert = !alert">Message</span>
     <span class="item">
       <span suiPopup popupTrigger="click" popupHeader="Example" popupText="This is an example popup" popupPlacement="right">Popover</span>
@@ -26,10 +24,16 @@
         <div class="description">
           <div class="ui segment">
             <sui-progress class="active" [value]="40">Active</sui-progress>
-            <sui-progress class="tiny" [value]="50">Tiny (autohides progress)</sui-progress>
+            <div class="ui segment loading">
+              <span>Loading Spinner</span>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="ui image label">
+      Label / Chip
+      <i class="delete icon"></i>
     </div>
     <sui-tabset>
       <div class="ui top attached tabular menu">
@@ -64,23 +68,14 @@
       </div>
       <div class="grouped fields">
         <label>Radio Button Style Examples</label>
-        <div class="field">
-          <sui-radio-button class="slider" value="a" [ngModel]>
-            Slider radio button
-          </sui-radio-button>
-        </div>
-        <div class="field">
-          <sui-radio-button class="toggle" value="b" [ngModel]>
-            Toggle radio button
-          </sui-radio-button>
-        </div>
       </div>
       <div class="ui input">
         <input type="text" placeholder="Input...">
       </div>
-      <sui-select [ngModel]>
+      <sui-select [ngModel] label="Select One">
         <sui-select-option value="One"></sui-select-option>
         <sui-select-option value="Two"></sui-select-option>
+        <sui-select-option value="Three"></sui-select-option>
       </sui-select>
       <button class="ui primary button">Button <i class="upload icon"></i></button>
     </form>
