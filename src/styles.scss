@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~materialize-css/dist/css/materialize.css';
+@import '~mdi/css/materialdesignicons.css';
+
 html, body, ng-ui-root {
   margin: 0;
   padding: 0;
@@ -50,4 +54,8 @@ button[hidden] {
 
 form {
   margin: 15px;
+}
+
+span.badge {
+  float: none;
 }

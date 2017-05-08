@@ -1,21 +1,13 @@
 <mz-navbar>
-  <mz-navbar-item-container align="left">
-    <mz-navbar-item><a>ng2-materialize: Nesting Level {{ deep }}</a></mz-navbar-item>
-  </mz-navbar-item-container>
+  <a class="brand-logo">ng2-materialize: Nesting Level {{ deep }}</a>
 </mz-navbar>
 <div class="demo-wrapper">
   <mz-sidenav demo-sidenav collapseButtonId="btn-sidenav-demo" id="sidenav">
-    <mz-sidenav-header>
-      Sidenav header
-    </mz-sidenav-header>
     <mz-sidenav-link>
       <a href="#" (click)="demoModal.open()" class="waves-effect">Modal</a>
     </mz-sidenav-link>
     <mz-sidenav-link>
       <a href="#" (click)="showToast()" class="waves-effect">Toast</a>
-    </mz-sidenav-link>
-    <mz-sidenav-link>
-      <a href="#" class="waves-effect">Popover</a>
     </mz-sidenav-link>
     <mz-sidenav-link>
       <a href="#" class="waves-effect">
@@ -44,6 +36,11 @@
         <p>Sed non risus ac orci tempus dictum. Suspendisse potenti. Quisque ultricies feugiat risus, eget lacinia nunc maximus eu.</p>
       </div>
     </div>
+    <mz-badge
+      caption="Example Badge"
+      badgeClass="blue"
+      [new]="true">
+    </mz-badge>
     <mz-card>
       <mz-card-title>
         Progress Card
@@ -87,6 +84,9 @@
           ngModel
           type="radio">
       </mz-radio-button-container>
+      <p class="range-field">
+        <input type="range" id="test5" min="0" max="100" />
+      </p>
       <mz-input-container>
         <input mz-input
           label="Text Field"
@@ -103,6 +103,7 @@
           <option>Option 3</option>
         </select>
       </mz-select-container>
+      <button mz-button>Submit <i mz-icon-mdi icon="upload" size="medium"></i></button>
     </form>
   </mz-sidenav>
   <div class="demo-content">
